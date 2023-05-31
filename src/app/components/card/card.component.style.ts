@@ -35,8 +35,6 @@ export const CardText = styled.p`
   font-weight: 600;
   font-size: 1rem;
   line-height: 100%;
-  max-height: 100%;
-  max-width: 100%;
   text-overflow: ellipsis;
 `;
 
@@ -48,16 +46,12 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  flex: 1;
 `;
 
 export const CardDivisor = styled.span`
   height: 100%;
   width: 0.1rem;
   background-color: var(--text-primary);
-`;
-
-export const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
+  justify-self: flex-end;
 `;

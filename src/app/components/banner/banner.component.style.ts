@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderStyled = styled.div`
+export const BannerStyled = styled.div`
   background-color: #252525;
   width: 100%;
   height: 6.7rem;
@@ -9,18 +9,14 @@ export const HeaderStyled = styled.div`
   display: flex;
   gap: 1.8rem;
 
-   @media (max-width: 76.8rem) {
-    left: 0;
-    bottom: 0;
-    position: absolute;
-    z-index: 1;
+   @media (max-width: 1026px) {
     padding: 2.4rem 1.4rem;
     flex-direction: column;
     height: 18.6rem;
   }
 `;
 
-export const HeaderText = styled.p`
+export const BannerText = styled.p`
   color: var(--text-secondary);
   font-style: normal;
   font-weight: 400;
@@ -28,7 +24,7 @@ export const HeaderText = styled.p`
   line-height: 2.5rem;
 `;
 
-export const HeaderPrice = styled.span`
+export const BannerPrice = styled.span`
   color: var(--text-secondary);
   font-style: normal;
   font-weight: bold;
@@ -36,16 +32,21 @@ export const HeaderPrice = styled.span`
   line-height: 2.5rem;
 `;
 
-export const IconWrapper = styled.div`
-  margin: 1.3rem 0;
+
+export const CloseButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.4rem;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  gap: 0.8rem;
 `;
 
-export const DividerGradient = styled.div`
-  width: 100%;
-  height: 0.1rem;
-  background: linear-gradient(90deg, var(--gradient-primary-color), var(--gradient-secondary-color));
+export const CloseButtonText = styled.div`
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
 `;

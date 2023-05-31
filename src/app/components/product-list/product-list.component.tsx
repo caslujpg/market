@@ -5,7 +5,6 @@ type ProductListOptions = {
   id: string;
   details: {
     name: string;
-    description: string;
   };
 };
 

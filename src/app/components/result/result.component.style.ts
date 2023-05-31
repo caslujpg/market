@@ -4,7 +4,7 @@ export const ResultWrapper = styled.div`
   margin-left: 20rem;
   margin-bottom: 1.8rem;
 
-  @media (max-width: 86rem) {
+  @media (max-width: 1026px) {
     margin-left: 1.4rem;
     margin-bottom: 1.4rem;
   }

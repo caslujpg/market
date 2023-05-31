@@ -1,5 +1,5 @@
 import { GlobalStyle } from ".././global.style";
-import { HeaderComponent } from "../components/header";
+import { BannerComponent } from "../components/banner";
 import { FooterComponent } from "../components/footer";
 import { CatalogCardComponent } from "../components/catalog-card";
 import { PageWrapper } from "../components/wrapper";
@@ -7,12 +7,13 @@ import { ResultComponent } from "../components/result";
 import { useCallback, useEffect, useState } from "react";
 import { ProductList } from "../components/product-list/product-list.component";
 import { InfiniteScroll } from "../components/infinite-scroll";
+import { HeaderComponent } from "../components/header";
+import { MainComponent } from "./Home.style";
 
 type Product = {
   id: string;
   details: {
     name: string;
-    description: string;
   };
 };
 
@@ -21,6 +22,21 @@ export function Home() {
   const [page, setPage] = useState(1);
   const [hasMoreProducts, setHasMoreProducts] = useState(true);
   const [load, setLoad] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1026);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const getProduct = useCallback(async (page?: number) => {
     setLoad(true);
@@ -37,9 +53,9 @@ export function Home() {
   }, []);
 
   function fetchMore() {
-    if (hasMoreProducts && !load) {
-      getProduct(page);
-    }
+    // if (hasMoreProducts && !load) {
+    //   getProduct(page);
+    // }
   }
 
   useEffect(() => {
@@ -49,14 +65,23 @@ export function Home() {
   return (
     <>
       <GlobalStyle />
-      <HeaderComponent />
-      <CatalogCardComponent />
-      <ResultComponent />
-      <PageWrapper>
-        <ProductList products={products} />
-      </PageWrapper>
 
-      <FooterComponent />
+      {!isMobile && <BannerComponent />}
+
+      <MainComponent>
+        <HeaderComponent />
+
+        <CatalogCardComponent />
+        <ResultComponent />
+        <PageWrapper>
+          <ProductList products={products} />
+        </PageWrapper>
+
+        <FooterComponent />
+      </MainComponent>
+
+      {isMobile && <BannerComponent variant="mobile" />}
+
       <InfiniteScroll callback={fetchMore} />
     </>
   );

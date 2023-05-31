@@ -12,14 +12,13 @@ export const FooterWrapper = styled.div`
   align-items: center;
   margin-top: auto;
 
-  @media (max-width: 76.8rem) {
+  @media (max-width: 1026px) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     gap: 2.8rem;
     padding: 2.4rem 1.4rem;
-    margin-bottom: 18.6rem;
   }
 `;
 
@@ -32,7 +31,7 @@ export const ButtonLink = styled.a`
   font-size: 1.6rem;
   line-height: 2.2rem;
   
-  @media (max-width: 76.8rem) {
+  @media (max-width: 1026px) {
     margin: 0.1rem;
     max-height: 100%;
     line-height: 0.1rem;
