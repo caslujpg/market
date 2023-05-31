@@ -8,6 +8,16 @@ export const HeaderStyled = styled.div`
   justify-content: center;
   display: flex;
   gap: 1.8rem;
+
+   @media (max-width: 76.8rem) {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    padding: 2.4rem 1.4rem;
+    flex-direction: column;
+    height: 18.6rem;
+  }
 `;
 
 export const HeaderText = styled.p`

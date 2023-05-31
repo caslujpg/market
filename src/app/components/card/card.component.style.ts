@@ -8,7 +8,7 @@ export const CardWrapper = styled.div`
   height: 23.4rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.6rem;
+  margin-bottom: 5rem;
   margin-right: 1.583rem;
 `;
 
@@ -47,6 +47,7 @@ export const Divider = styled.div`
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: left;
 `;
 
 export const CardDivisor = styled.span`

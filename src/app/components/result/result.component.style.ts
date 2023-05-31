@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const ResultWrapper = styled.div`
   margin-left: 20rem;
   margin-bottom: 1.8rem;
+
+  @media (max-width: 86rem) {
+    margin-left: 1.4rem;
+    margin-bottom: 1.4rem;
+  }
 `;
 
 export const ResultText = styled.p`
