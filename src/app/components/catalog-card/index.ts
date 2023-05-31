@@ -1,0 +1,1 @@
+export { CatalogCardComponent } from './catalog-card.component';

@@ -1,0 +1,1 @@
+export { PageWrapper } from './wrapper.component.style';
