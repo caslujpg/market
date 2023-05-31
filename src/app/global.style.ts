@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--background);
     min-height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
   }
 
   :root {
