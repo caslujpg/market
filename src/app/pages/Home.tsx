@@ -53,9 +53,9 @@ export function Home() {
   }, []);
 
   function fetchMore() {
-    // if (hasMoreProducts && !load) {
-    //   getProduct(page);
-    // }
+    if (hasMoreProducts && !load) {
+      getProduct(page);
+    }
   }
 
   useEffect(() => {
